@@ -1,63 +1,90 @@
-# NgxSmartForms
+# Angular Smart Forms
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.0.
+Zero-config reactive forms with built-in validation, auto-save, and smart error handling for Angular.
 
-## Code scaffolding
+## Features
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- 🚀 **Zero Configuration**: Works out of the box
+- 💾 **Auto-Save**: Automatically saves form data as user types
+- ✅ **Smart Validation**: Built-in validators + custom validation support
+- 🎨 **Visual Feedback**: Real-time error display and status indicators
+- 🔧 **TypeScript**: Full TypeScript support with interfaces
+- 📱 **Responsive**: Works on all devices
+- 🎯 **Performance**: Optimized with debouncing and change detection
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the library, run:
+## Installation
 
 ```bash
-ng build ngx-smart-forms
+npm install angular-smart-forms
 ```
 
-This command will compile your project, and the build artifacts will be placed in the `dist/` directory.
+## Quick Start
 
-### Publishing the Library
+```typescript
+// app.module.ts
+import { SmartFormModule } from "angular-smart-forms";
 
-Once the project is built, you can publish your library by following these steps:
-
-1. Navigate to the `dist` directory:
-   ```bash
-   cd dist/ngx-smart-forms
-   ```
-
-2. Run the `npm publish` command to publish your library to the npm registry:
-   ```bash
-   npm publish
-   ```
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
+@NgModule({
+  imports: [SmartFormModule],
+  // ...
+})
+export class AppModule {}
 ```
 
-## Running end-to-end tests
+```typescript
+// component.ts
+import { Component } from "@angular/core";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { SmartValidators } from "angular-smart-forms";
 
-For end-to-end (e2e) testing, run:
+@Component({
+  selector: "app-example",
+  template: `
+    <form [formGroup]="userForm" smartForm [config]="formConfig">
+      <input formControlName="email" smartInput [fieldConfig]="{ type: 'email', placeholder: 'Enter email' }" name="email" />
 
-```bash
-ng e2e
+      <input formControlName="password" smartInput [fieldConfig]="{ type: 'password', placeholder: 'Enter password' }" name="password" />
+
+      <button type="submit" [disabled]="!userForm.valid">Submit</button>
+    </form>
+  `,
+})
+export class ExampleComponent {
+  userForm: FormGroup;
+  formConfig = {
+    autoSave: true,
+    autoSaveDelay: 1000,
+    showErrorsOnTouch: true,
+  };
+
+  constructor(private fb: FormBuilder) {
+    this.userForm = this.fb.group({
+      email: ["", [Validators.required, Validators.email]],
+      password: ["", [Validators.required, SmartValidators.strongPassword()]],
+    });
+  }
+}
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## API Reference
 
-## Additional Resources
+### SmartFormDirective
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- `smartForm`: FormGroup instance
+- `config`: SmartFormConfig options
+
+### SmartInputDirective
+
+- `smartInput`: FormControl instance
+- `fieldConfig`: SmartFieldConfig options
+
+### Built-in Validators
+
+- `SmartValidators.strongPassword()`
+- `SmartValidators.noSpaces()`
+- `SmartValidators.phoneNumber()`
+- `SmartValidators.creditCard()`
+
+## License
+
+MIT
