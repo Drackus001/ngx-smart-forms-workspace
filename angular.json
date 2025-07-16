@@ -3,23 +3,23 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngx-smart-forms": {
+    "ng-smart-forms": {
       "projectType": "library",
-      "root": "projects/ngx-smart-forms",
-      "sourceRoot": "projects/ngx-smart-forms/src",
+      "root": "projects/ng-smart-forms",
+      "sourceRoot": "projects/ng-smart-forms/src",
       "prefix": "smart",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/ngx-smart-forms/ng-package.json"
+            "project": "projects/ng-smart-forms/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/ngx-smart-forms/tsconfig.lib.prod.json"
+              "tsConfig": "projects/ng-smart-forms/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/ngx-smart-forms/tsconfig.lib.json"
+              "tsConfig": "projects/ng-smart-forms/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -27,7 +27,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "projects/ngx-smart-forms/tsconfig.spec.json",
+            "tsConfig": "projects/ng-smart-forms/tsconfig.spec.json",
             "polyfills": [
               "zone.js",
               "zone.js/testing"

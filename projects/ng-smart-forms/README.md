@@ -15,14 +15,14 @@ Zero-config reactive forms with built-in validation, auto-save, and smart error 
 ## Installation
 
 ```bash
-npm install angular-smart-forms
+npm install ng-smart-forms
 ```
 
 ## Quick Start
 
 ```typescript
 // app.module.ts
-import { SmartFormModule } from "angular-smart-forms";
+import { SmartFormModule } from "ng-smart-forms";
 
 @NgModule({
   imports: [SmartFormModule],

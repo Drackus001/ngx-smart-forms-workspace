@@ -1,5 +1,5 @@
 {
-  "name": "ngx-smart-forms",
+  "name": "ng-smart-forms",
   "version": "1.0.0",
   "description": "Zero-config reactive forms with built-in validation, auto-save, and smart error handling for Angular",
   "keywords": [
@@ -10,15 +10,15 @@
     "auto-save",
     "typescript",
     "ui",
-    "ngx"
+    "ng"
   ],
-  "homepage": "https://github.com/Drackus001/ngx-smart-forms",
+  "homepage": "https://github.com/Drackus001/ng-smart-forms",
   "bugs": {
-    "url": "https://github.com/Drackus001/ngx-smart-forms/issues"
+    "url": "https://github.com/Drackus001/ng-smart-forms/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Drackus001/ngx-smart-forms.git"
+    "url": "git+https://github.com/Drackus001/ng-smart-forms.git"
   },
   "author": "Satyam Agarwal <Satyam.Agarwal.IN@google.com>",
   "license": "MIT",
