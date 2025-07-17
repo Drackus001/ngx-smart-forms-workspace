@@ -35,7 +35,7 @@ export class AppModule {}
 // component.ts
 import { Component } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { SmartValidators } from "angular-smart-forms";
+import { SmartValidators } from "ng-smart-forms";
 
 @Component({
   selector: "app-example",

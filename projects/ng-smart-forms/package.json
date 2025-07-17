@@ -1,6 +1,6 @@
 {
   "name": "ng-smart-forms",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Zero-config reactive forms with built-in validation, auto-save, and smart error handling for Angular",
   "keywords": [
     "angular",
@@ -22,6 +22,9 @@
   },
   "author": "Satyam Agarwal <Satyam.Agarwal.IN@google.com>",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "peerDependencies": {
     "@angular/common": "^19.2.0",
     "@angular/core": "^19.2.0"
